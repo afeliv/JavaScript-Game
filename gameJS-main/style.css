@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    background-color: #000; /* Fundo preto */
     height: 100vh;
     display: flex;
     align-items: center;
@@ -14,123 +14,43 @@ body {
 }
 
 
-body::before {
-    background-image: url("img/code.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
-}
 
 .container {
     width: 1200px;
-    height: 600px;
+    height: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 24px;
     border: 1px solid #1875E8;
     box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
-    background-image: url("img/Ruido.png");
-    background-size: 100% 100%;
+    background-color: transparent;
     position: relative;
+    text-align: center;
+    padding: 40px;
 }
 
 .container__conteudo {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-}
-
-.container__informacoes {
-    flex: 1;
-    padding: 20px;
-}
-
-.container__botao {
-    border-radius: 16px;
-    background: #1875E8;
-    padding: 16px 24px;
-    width: 100%;
-    font-size: 24px;
-    font-weight: 700;
-    border: none;
-    margin-top: 16px;
-}
-
-.container__texto {
-    margin: 16px 0 16px 0;
-}
-
-.container__texto-azul {
-    color: #1875E8;
-}
-
-h1 {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 72px;
-}
-
-h2,
-p,
-button {
-    font-family: 'Inter', sans-serif;
-}
-
-h2 {
-    font-size: 32px;
-    font-weight: 400;
-}
-
-@media (max-width: 768px) {
-    /* Container: Remove a largura fixa e deixa full-width (com padding) */
-    .container {
-        width: 90%; /* Largura relativa para a tela */
-        height: auto; /* Altura adapta-se ao conteúdo */
-        flex-direction: column; /* Empilha os itens verticalmente */
-        justify-content: flex-start;
-        padding: 20px;
-        margin: 20px 0; /* Adiciona margem vertical para não colar nas bordas */
-    }
-
-    /* Remove o posicionamento absoluto do bloco de conteúdo */
-    .container__conteudo {
-        position: static;
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
 
-    /* Ajusta as margens e paddings */
     .container__informacoes {
         padding: 0;
-        text-align: center; /* Centraliza o texto */
+        text-align: center;
     }
 
-    /* Ajuste de Tipografia para telas menores */
     h1 {
-        font-size: 48px; /* Reduz o tamanho do título principal */
+        font-size: 48px;
     }
 
     h2 {
-        font-size: 24px; /* Reduz o tamanho do subtítulo */
+        font-size: 24px;
     }
-
-    /* Garante que a imagem de fundo 'code.png' não polua muito a tela */
-    body::before {
-        opacity: 0.2; /* Torna a imagem mais sutil */
-        background-size: 80% auto; /* Ajusta o tamanho da imagem de fundo */
-    }
-}
 
 
 @media (max-width: 480px) {
-    /* Reduz ainda mais o tamanho dos elementos */
     h1 {
         font-size: 36px;
     }
@@ -144,7 +64,6 @@ h2 {
         padding: 12px 20px;
     }
 
-    /* A margem do texto volta a ser padrão para poupar espaço */
     .container__texto {
         margin: 10px 0;
     }
