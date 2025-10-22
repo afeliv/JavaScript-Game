@@ -86,3 +86,66 @@ h2 {
     font-size: 32px;
     font-weight: 400;
 }
+
+@media (max-width: 768px) {
+    /* Container: Remove a largura fixa e deixa full-width (com padding) */
+    .container {
+        width: 90%; /* Largura relativa para a tela */
+        height: auto; /* Altura adapta-se ao conteúdo */
+        flex-direction: column; /* Empilha os itens verticalmente */
+        justify-content: flex-start;
+        padding: 20px;
+        margin: 20px 0; /* Adiciona margem vertical para não colar nas bordas */
+    }
+
+    /* Remove o posicionamento absoluto do bloco de conteúdo */
+    .container__conteudo {
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Ajusta as margens e paddings */
+    .container__informacoes {
+        padding: 0;
+        text-align: center; /* Centraliza o texto */
+    }
+
+    /* Ajuste de Tipografia para telas menores */
+    h1 {
+        font-size: 48px; /* Reduz o tamanho do título principal */
+    }
+
+    h2 {
+        font-size: 24px; /* Reduz o tamanho do subtítulo */
+    }
+
+    /* Garante que a imagem de fundo 'code.png' não polua muito a tela */
+    body::before {
+        opacity: 0.2; /* Torna a imagem mais sutil */
+        background-size: 80% auto; /* Ajusta o tamanho da imagem de fundo */
+    }
+}
+
+
+@media (max-width: 480px) {
+    /* Reduz ainda mais o tamanho dos elementos */
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .container__botao {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
+
+    /* A margem do texto volta a ser padrão para poupar espaço */
+    .container__texto {
+        margin: 10px 0;
+    }
+}
